@@ -1,0 +1,314 @@
+<mvc:View
+    controllerName="sample.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:mc="sap.suite.ui.microchart"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <subHeader>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <SegmentedButton selectedKey="kids">
+                    <items>
+                        <SegmentedButtonItem
+                            text="Kids"
+                            key="kids"
+                        />
+                        <SegmentedButtonItem text="Adults" />
+                        <SegmentedButtonItem text="Seniors" />
+                    </items>
+                </SegmentedButton>
+                <ToolbarSpacer />
+            </OverflowToolbar>
+        </subHeader>
+
+        <content>
+            <SegmentedButton selectedKey="Kids">
+                <items>
+                    <SegmentedButtonItem
+                        text="Kids"
+                        key="Kids"
+                    />
+                    <SegmentedButtonItem text="Adults" />
+                    <SegmentedButtonItem text="Seniors" />
+                </items>
+            </SegmentedButton>
+
+            <VBox>
+                <SegmentedButton selectedKey="Satelite">
+                    <items>
+                        <SegmentedButtonItem text="Map" />
+                        <SegmentedButtonItem
+                            text="Satelite"
+                            key="Satelite"
+                        />
+                        <SegmentedButtonItem text="Hybrid" />
+                    </items>
+                </SegmentedButton>
+                <SegmentedButton
+                    selectedKey="Compitator"
+                    class="sapUiSmallMarginBottom"
+                >
+                    <items>
+                        <SegmentedButtonItem icon="sap-icon://taxi" />
+                        <SegmentedButtonItem icon="sap-icon://lab" />
+                        <SegmentedButtonItem
+                            icon="sap-icon://citizen-connect"
+                            key="Compitator"
+                        />
+                    </items>
+                </SegmentedButton>
+                <SegmentedButton>
+                    <items>
+                        <SegmentedButtonItem text="Selected" />
+                        <SegmentedButtonItem text="Enabled" />
+                        <SegmentedButtonItem
+                            text="Disabled"
+                            enabled="false"
+                        />
+                    </items>
+                </SegmentedButton>
+                <SegmentedButton
+                    id="SB1"
+                    selectionChange="onSelectionChange"
+                >
+                    <items>
+                        <SegmentedButtonItem text="One" />
+                        <SegmentedButtonItem text="Two" />
+                        <SegmentedButtonItem text="Three" />
+                    </items>
+                </SegmentedButton>
+
+                <SegmentedButton selectedKey="Small">
+                    <items>
+                        <SegmentedButtonItem
+                            text="Small"
+                            key="Small"
+                        />
+                        <SegmentedButtonItem text="Medium" />
+                        <SegmentedButtonItem text="Large" />
+                    </items>
+                </SegmentedButton>
+            </VBox>
+            <VBox height="25%">
+            
+                <Text text="Absolute and percentage values" />
+
+                <mc:InteractiveBarChart
+                    labelWidth="25%"
+                    press="press"
+                    selectionChanged="selectionChanged"
+                >
+                    <mc:bars>
+                        <mc:InteractiveBarChartBar
+                            label="product 1"
+                            value="10"
+                        />
+                        <mc:InteractiveBarChartBar
+                            label="product 2"
+                            value="20"
+                        />
+                        <mc:InteractiveBarChartBar
+                            label="product 3"
+                            value="70"
+                        />
+                    </mc:bars>
+                </mc:InteractiveBarChart>
+                </VBox>
+
+                <VBox height="25%" class="sapUiSmallMarginTop">
+                <Text text="With percentage values" />
+                <mc:InteractiveBarChart
+                    labelWidth="25%"
+                    selectionChanged="selectionChanged"
+                    press="press"
+                >
+                    <mc:bars>
+                        <mc:InteractiveBarChartBar
+                            label="product1"
+                            value="10"
+                            displayedValue="10%"
+                        />
+                        <mc:InteractiveBarChartBar
+                            label="product2"
+                            value="20"
+                            displayedValue="20%"
+                        />
+                        <mc:InteractiveBarChartBar
+                            label="product3"
+                            value="30"
+                            displayedValue="70%"
+                        />
+                    </mc:bars>
+                </mc:InteractiveBarChart>
+                 </VBox>
+                <VBox height="25%" class="sapUiSmallMarginTop">
+                <Text text="Positive and Negative values" />
+
+                <mc:InteractiveBarChart
+                    labelWidth="25%"
+                    press="press"
+                    selectionChanged="selectionChanged"
+                >
+                    <mc:bars>
+                        <mc:InteractiveBarChartBar
+                            label="product1"
+                            value="25"
+                        />
+                        <mc:InteractiveBarChartBar
+                            label="product2"
+                            value="-50"
+                        />
+                        <mc:InteractiveBarChartBar
+                            label="product3"
+                            value="-100"
+                        />
+                    </mc:bars>
+                </mc:InteractiveBarChart>
+                </VBox>
+            <VBox height="25%" class="sapUiSmallMarginTop">
+                <Text text="Preselected Values" />
+                <mc:InteractiveBarChart
+                    labelWidth="25%"
+                    selectionChanged="selectionChanged"
+                    press="press"
+                >
+                    <mc:bars>
+                        <mc:InteractiveBarChartBar
+                            label="product1"
+                            value="10"
+                        />
+                        <mc:InteractiveBarChartBar
+                            label="product2"
+                            value="20"
+                        />
+                        <mc:InteractiveBarChartBar
+                            label="product3"
+                            value="70"
+                            selected="true"
+                        />
+                    </mc:bars>
+                </mc:InteractiveBarChart>
+            
+            </VBox>
+
+            <VBox height="50%" class="sapUiSmallMarginTop">
+            <Text text="Absolute and percentage values" />
+            <mc:InteractiveLineChart press="press" selectionChanged="selectionChanged">
+            <mc:points>
+            <mc:InteractiveLineChartPoint value="33.1" label="May" secondaryLabel="Q2"/>
+            <mc:InteractiveLineChartPoint value="12" label="june"/>
+            <mc:InteractiveLineChartPoint value="51.4" label="july" secondaryLabel="Q3"/>
+            <mc:InteractiveLineChartPoint value="52" label="Aug"/>
+            <mc:InteractiveLineChartPoint value="69.9" label="Sep"/>
+            <mc:InteractiveLineChartPoint value="0.9" label="Oct" secondaryLabel="Q4"/>
+            </mc:points>
+            </mc:InteractiveLineChart>
+            </VBox>
+            
+             <VBox height="50%" class="sapUiSmallMarginTop">
+            
+            <mc:InteractiveLineChart press="press" selectionChanged="selectionChanged">
+            <mc:points>
+            <mc:InteractiveLineChartPoint value="33.1" displayedValue="33.1%" label="May" secondaryLabel="2015"/>
+            <mc:InteractiveLineChartPoint value="2.2" displayedValue="2.2%" label="june"/>
+            <mc:InteractiveLineChartPoint value="51.4" displayedValue="51.4%" label="july" />
+            <mc:InteractiveLineChartPoint value="19.9" displayedValue="19.9%" label="Aug"/>
+            <mc:InteractiveLineChartPoint value="69.9" displayedValue="69.9%" label="Sep"/>
+            <mc:InteractiveLineChartPoint value="0.9" displayedValue="0.9%" label="Oct" />
+            </mc:points>
+            </mc:InteractiveLineChart>
+
+            </VBox>
+             <VBox height="50%" class="sapUiSmallMarginTop">
+            <Text text="Positive and negative values" />
+            <mc:InteractiveLineChart press="press" selectionChanged="selectionChanged">
+            <mc:points>
+            <mc:InteractiveLineChartPoint value="52.1" label="May" />
+            <mc:InteractiveLineChartPoint value="72" label="june"/>
+            <mc:InteractiveLineChartPoint value="-51.4" label="july"/>
+            <mc:InteractiveLineChartPoint value="19.9" label="Aug"/>
+            <mc:InteractiveLineChartPoint value="-61.9" label="Sep"/>
+            <mc:InteractiveLineChartPoint value="5" label="Oct" />
+            </mc:points>
+            </mc:InteractiveLineChart>
+            </VBox>
+
+             <VBox height="50%" class="sapUiSmallMarginTop">
+            <Text text="Preselected values" />
+            <mc:InteractiveLineChart press="press" selectionChanged="selectionChanged">
+            <mc:points>
+            <mc:InteractiveLineChartPoint value="33.1" label="May" selected="true"/>
+            <mc:InteractiveLineChartPoint value="12" label="june"/>
+            <mc:InteractiveLineChartPoint value="51.4" label="july" />
+            <mc:InteractiveLineChartPoint value="52" label="Aug" selected="true"/>
+            <mc:InteractiveLineChartPoint value="69.9" label="Sep"/>
+            <mc:InteractiveLineChartPoint value="0.9" label="Oct" />
+            </mc:points>
+            </mc:InteractiveLineChart>
+            </VBox>
+
+             <VBox height="50%" class="sapUiSmallMarginTop">
+            <Text text="Label positions are adjusted to avoid intersections with the line" />
+            <mc:InteractiveLineChart press="press" selectionChanged="selectionChanged">
+            <mc:points>
+            <mc:InteractiveLineChartPoint value="8.1" label="May" displayedValue="8.1%"/>
+            <mc:InteractiveLineChartPoint value="-12" label="june" displayedValue="-12%"/>
+            <mc:InteractiveLineChartPoint value="8.3" label="july" displayedValue="8.3%"/>
+            <mc:InteractiveLineChartPoint value="8.4" label="Aug" displayedValue="8.4%"/>
+            <mc:InteractiveLineChartPoint value="8.3" label="Sep" displayedValue="8.3%"/>
+            <mc:InteractiveLineChartPoint value="8.1" label="Oct" displayedValue="8.1%"/>
+            </mc:points>
+            </mc:InteractiveLineChart>
+            </VBox>
+
+            <VBox height="50%" class="sapUiSmallMarginTop">
+            <Text text="Three Segments" />
+            <mc:InteractiveDonutChart press="press" selectionChanged="selectionChanged" displayedSegments="3">
+            <mc:segments>
+            <mc:InteractiveDonutChartSegment label="Implementation" value="40.0" displayedValue="40.0%"/>
+            <mc:InteractiveDonutChartSegment label="Design phase" value="21.5" displayedValue="21.5%"/>
+            <mc:InteractiveDonutChartSegment label="Test phase" value="38.5" displayedValue="38.5%"/>
+            </mc:segments>
+            </mc:InteractiveDonutChart>
+            </VBox>
+
+            <VBox height="50%" class="sapUiSmallMarginTop">
+            <Text text="Four Segments" />
+            <mc:InteractiveDonutChart press="press" selectionChanged="selectionChanged" displayedSegments="4">
+            <mc:segments>
+            <mc:InteractiveDonutChartSegment label="Design phase" value="32.0" displayedValue="32.0%"/>
+            <mc:InteractiveDonutChartSegment label="Implementation" value="28" displayedValue="28%"/>
+            <mc:InteractiveDonutChartSegment label="Test Phase" value="25" displayedValue="25%"/>
+            <mc:InteractiveDonutChartSegment label="Launch Phase" value="15" displayedValue="15%"/>
+            </mc:segments>
+            </mc:InteractiveDonutChart>
+            </VBox>
+            <VBox>
+            <Text text="This is one of the datepicker "/>
+            <DatePicker id="dp1" placeholder="Enter Date" class="sapUiSmallMarginBottom"/>
+            </VBox>
+
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <SegmentedButton selectedKey="small">
+                    <items>
+                        <SegmentedButtonItem
+                            text="Small"
+                            key="small"
+                        />
+                        <SegmentedButtonItem text="Medium" />
+                        <SegmentedButtonItem text="Large" />
+                    </items>
+                </SegmentedButton>
+                <ToolbarSpacer />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
