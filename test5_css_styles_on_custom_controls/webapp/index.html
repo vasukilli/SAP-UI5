@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>App Title</title>
+    <style>
+        html, body, body > div, #container, #container-uiarea {
+            height: 100%;
+        }
+    </style>
+    <script
+        id="sap-ui-bootstrap"
+        src="https://ui5.sap.com/1.120.3/resources/sap-ui-core.js" 
+        data-sap-ui-libs="sap.m"
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-resourceroots='{
+            "test5cssstylesoncustomcontrols": "./"
+        }'
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frameOptions="trusted"
+    ></script>
+    <!-- src="/resources/sap-ui-core.js" -->
+    <script>
+        sap.ui.getCore().attachInit(async function() {
+        //1.control no 1
+          sap.ui.core.Control.extend("sap.ui.VasuButton",{ 
+            metadata :{
+                properties :{
+                    desc : {type : "string", defaultValue :"Register"},
+                    Width : {type : "string", defaultValue : "100px"},
+                    heighT : {type : "string" , defaultValue:"100px"}
+                }
+            },
+            //<button style="width : 50%"></button>
+             renderer : function(oRm,oControl){
+                //oRm.write("<button>"+ oControl.getDesc()+"</button>");
+                oRm.write("<button ");
+                oRm.addStyle("width",oControl.getWidth());
+                oRm.addStyle("height",oControl.getHeighT());
+                //oRm.addStyle("font-size",oControl.getWidth());
+                oRm.addStyle("border-radius",oControl.getWidth());//for circle representation
+                oRm.writeStyles();
+                //oRm.write("style=width:50%");
+                oRm.write(">");
+                oRm.write(oControl.getDesc());
+                oRm.write("</button>");
+            }
+          });
+          let vasuB = new sap.ui.VasuButton({desc : "Login"});
+          vasuB.placeAt(content);
+        //new sap.ui.VasuButton({width : "50%"}).placeAt(content);
+
+        //2.control with css 02
+
+        sap.ui.core.Control.extend("sap.ui.RoundButton",{
+            metadata :{
+                properties :{
+                    Des : {type :"string" , defaultValue:"Kalyani"},
+                    
+                    display :{type:"string",defaultValue:"block"},
+                    width :{type:"string",defaultValue:"100px"},
+                    height :{type:"string",defaultValue:"100px"},
+                    lheight :{type:"string",defaultValue:"50px"},
+                    border:{type:"string",defaultValue:"2px solid #f5f5f5"},
+                    bradius :{type:"string",defaultValue:"50px"},
+                    color:{type:"string",defaultValue:"#f5f5f5"},
+                    talign :{type:"string",defaultValue:"center"},
+                    tdecoration:{type:"string",defaultValue:"none"},
+                    background:{type:"string",defaultValue:"rgb(250,45,6)"},
+                    bshodow:{type:"string",defaultValue:"0 0 3px gray"},
+                    fsize:{type:"string",defaultValue:"20px"},
+                    fweight:{type:"string",defaultValue:"bold"}
+
+                }
+            },
+            renderer : function(oRm,oControl)
+            {
+                oRm.write("<button ")
+                oRm.addStyle("display",oControl.getDisplay());
+                oRm.addStyle("width",oControl.getWidth());
+                oRm.addStyle("height",oControl.getHeight());
+                oRm.addStyle("line-height",oControl.getLheight());
+                oRm.addStyle("border",oControl.getBorder());
+                oRm.addStyle("border-radius",oControl.getBradius());
+                oRm.addStyle("color",oControl.getColor());
+                oRm.addStyle("text-align",oControl.getTalign());
+                oRm.addStyle("text-decoration",oControl.getTdecoration());
+                oRm.addStyle("background",oControl.getBackground());
+                oRm.addStyle("box-shodow",oControl.getBshodow());
+                oRm.addStyle("font-size",oControl.getFsize());
+                oRm.addStyle("font-weight",oControl.getFweight());
+                oRm.writeStyles();
+                oRm.write(">");
+                oRm.write(oControl.getDes());
+                oRm.write("</button>");
+
+            }
+           
+
+        });
+        let roundB = new sap.ui.RoundButton();
+        roundB.placeAt("content2");
+
+
+    });
+    </script>
+</head>
+<body class="sapUiBody sapUiSizeCompact" id="content1">
+    <!-- <div
+        data-sap-ui-component
+        data-name="test5cssstylesoncustomcontrols"
+        data-id="container"
+        data-settings='{"id" : "test5cssstylesoncustomcontrols"}'
+        data-handle-validation="true"
+    ></div> 
+    -->
+    <h2>CSS styles for controls</h2>
+    <div id="content"></div><br>
+    <h1>Round Button Generation by using css properties</h1>
+    <div id="content2"></div>
+    <!-- <button style="width : 50%">Login</button>  -->
+</body>
+</html>

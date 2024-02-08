@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>App Title</title>
+    <style>
+        html, body, body > div, #container, #container-uiarea {
+            height: 100%;
+        }
+    </style>
+    <script
+        id="sap-ui-bootstrap"
+        src="resources/sap-ui-core.js"
+        data-sap-ui-libs="sap.m "
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-resourceroots='{
+            "test4customcontrol010224": "./"
+        }'
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frameOptions="trusted"
+    ></script>
+    <!-- <script>
+        debugger
+        sap.ui.core.Control.extend("smax.ui.SMaxButton",{
+            metadata : {
+                //library : "smax.ui",
+                properties : {
+                    desc : "String" //framework create setDesc and getDesc
+                }
+            },
+            //init:function(){},
+            renderer : function(oRm , oControl){
+                // orm - object render manager
+                // oControl - object controller(itself)
+               // oRm.write("<button>Login</button>");
+               oRm.write("<button>");
+                oRm.writeEscaped(oControl.getDesc());
+                oRm.write("</button>");
+            }
+    
+        });
+        var oSmax = new smax.ui.SMaxButton({
+            desc : "Login"
+        });
+        oSmax.placeAt("content1");
+    
+        // var sbutton = new sap.m.Button();
+        // sbutton.setText("Register");
+        // sbutton.placeAt("content2");
+    
+    
+    </script> -->
+    <link rel="stylesheet" href="View1.controller.js" >
+</head>
+<body class="sapUiBody sapUiSizeCompact">
+    <div id="content1"></div>
+</body>
+</html>

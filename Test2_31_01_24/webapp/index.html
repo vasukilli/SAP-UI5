@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SampleApplication2</title>
+    <style>
+        html, body, body > div, #container, #container-uiarea {
+            height: 100%;
+        }
+    </style>
+    <script
+    id="sap-ui-bootstrap"
+    src="resources/sap-ui-core.js"
+    data-sap-ui-libs="sap.m "
+    data-sap-ui-theme="sap_horizon"
+    data-sap-ui-resourceroots='{
+        "srv.northwind.project2": "./"
+    }'
+    data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+    data-sap-ui-compatVersion="edge"
+    data-sap-ui-async="true"
+    data-sap-ui-frameOptions="trusted"
+></script>
+   
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"/> -->
+
+    <script>
+        sap.ui.getCore().attachInit(function()  {
+        var oEmp = new sap.m.Label({
+            text: "Employee Name"
+        });
+        oEmp.placeAt( "content" );
+        var oEInput = new sap.m.Input({});
+        oEInput.placeAt( "content" );
+
+        var oEButton = new sap.m.Button({
+            text : "Register"
+        });
+        oEButton.placeAt( "content" );
+
+        var deprt = new sap.m.Label({
+            text : "Department"
+        });
+        deprt.placeAt("content");
+
+        var departIn = new sap.m.Input({});
+        departIn.placeAt("content");
+
+        var role = new sap.m.Label({
+            text : "Role"
+        });
+        role.placeAt("content");
+        var roleIn = new sap.m.Input({});
+        roleIn.placeAt("content");
+
+        var persEma = new sap.m.Label({
+            text : "Personal Email"
+        });
+        persEma.placeAt("content");
+
+        var pan = new sap.m.Label({
+            text : "PAN"
+        });
+        pan.placeAt("content");
+        var panIn = new sap.m.Input({});
+        panIn.placeAt("content");
+
+        var country = new sap.m.Label({
+            text : "Country"
+        });
+        country.placeAt("content");
+        var countIn = new sap.m.Input({});
+        countIn.placeAt("content");
+
+        var zipC = new sap.m.Label({
+            text:"Zip code"
+        });
+        zipC.placeAt("content");
+        var zipCIn = new sap.m.Input({});
+        zipCIn.placeAt("content");
+
+        var regButt = new sap.m.Button({
+            text : "Register"
+        });
+        regButt.placeAt("content");
+
+        var pendApp = new sap.m.Label({
+            text : "Pending Approval"
+        });
+        pendApp.placeAt("content");
+
+        var goBu = new sap.m.Button({
+            text : "Go"
+        });
+        goBu.placeAt("content");
+
+        var label1 = new sap.m.Label({
+            text : "Label 1",
+            busy : false,
+            // busyIndicatorSize : Small
+            // DesignLabel : Bold
+            required:true ,  
+            //showColon : true
+            showColon : true , 
+            // textAlign : Right
+           visible : true,
+           //visible : false
+        });
+        label1.placeAt("content1");
+
+           var olab = new  sap.m.Label({
+            text : "label 2",
+            busy : true , 
+            busyIndicatorDelay :1000 ,
+            required : true , 
+            showColon : true ,
+            visible : true 
+
+           });
+           olab.placeAt("content2");
+
+           var oInpu = new sap.m.Input(
+            {
+              autocomplete : false,
+              blocked : false ,
+              //blocked : true
+              //busy : true,
+              //busy : false
+             // busyIndicatorDelay : 500,
+             // dateFormat : yyyy-mm-dd
+             editable : true
+
+
+            });
+            oInpu.placeAt("content3");
+ });
+    </script> 
+</head>
+<body class="sapUiBody sapUiSizeCompact" role="application" >
+    <h1>SAP UI5 Application Form</h1>
+    <h3>Employee registration :</h3>
+    <div id="content"></div>
+    <h3>Label Representation</h3>
+    <div id="content1"></div>
+    <div id="content2"></div>
+    <h3>Input Representation</h3>
+    <div id="content3"></div>
+      
+</body>
+</html> 
