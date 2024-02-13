@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>App Title</title>
+    <style>
+        html, body, body > div, #container, #container-uiarea {
+            height: 100%;
+        }
+    </style>
+    <script
+        id="sap-ui-bootstrap"
+        src="https://ui5.sap.com/1.120.3/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-resourceroots='{
+            "test83dpyramidcss090224": "./"
+        }'
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frameOptions="trusted"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script>
+        sap.ui.getCore().attachInit(async function(){
+        sap.ui.core.Control.extend("sap.ui.DPyramid",{
+            metadata :{
+                properties :{
+
+                }
+            },
+            renderer : function(oRm,oControl)
+            {
+                oRm.addClass(".pyramid");
+                oRm.addClass(".side");
+                oRm.addClass(".one");
+                oRm.addClass(".two");
+                oRm.addClass(".three");
+                oRm.addClass(".base");
+                oRm.writeClasses();
+            }
+
+
+        });
+        let oPyramid = new sap.ui.DPyramid({});
+        oPyramid.placeAt("content1");
+    });
+
+    </script>
+</head>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+    <!-- <div
+        data-sap-ui-component
+        data-name="test83dpyramidcss090224"
+        data-id="container"
+        data-settings='{"id" : "test83dpyramidcss090224"}'
+        data-handle-validation="true"
+    ></div> -->
+    <!-- <h1>3D Pyramid </h1> -->
+    
+    <div class="pyramid">
+        <div class="base"></div>
+        <div class="side one"></div>
+        <div class="side two"></div>
+        <div class="side three"></div>
+        <div class="side four"></div>
+    </div>
+    
+</body>
+</html>
